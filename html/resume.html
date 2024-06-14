@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#intro {
+    background: url('background.jfif') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.intro-text button {
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.intro-text button:hover {
+    background: #555;
+}
+
+section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+#about {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 2rem;
+}
+
+#academic-skills {
+    background: #e2e2e2;
+}
+
+.academic-skills-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: left;
+}
+
+.academic,
+.skills {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.skills ul {
+    list-style-type: disc;
+    padding-left: 1rem;
+}
+
+#portfolio {
+    background: #e2e2e2;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    background: #333;
+    color: #fff;
+    margin: 1rem;
+    padding: 2rem;
+    flex: 1 1 calc(25% - 2rem);
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+#contact {
+    background: #fff;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #333;
+    outline: none;
+}
+
+#contact-form button {
+    padding: 0.5rem 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+#contact-form button:hover {
+    background: #555;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .about-container,
+    .academic-skills-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image,
+    .academic,
+    .skills {
+        margin-top: 1rem;
+    }
+
+    .gallery-item {
+        flex: 1 1 calc(50% - 2rem);
+    }
+
+    .intro-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .intro-text p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 calc(100% - 2rem);
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+
+    .intro-text p {
+        font-size: 1rem;
+    }
+}
+
+header.scrolled {
+    background: #222;
+    transition: background 0.3s;
+}
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Resume</a></li>
+                <li><a href="#academic-skills">Academic & Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intro">
+        <div class="intro-text">
+            <h1>Welcome to My Resume</h1>
+            <p>OUSSAMA BOUGHAZI</p>
+            <button id="learn-more-btn">Learn More...</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>Hello! I'm Oussama, a passionate web developer with expertise in creating stunning and efficient web solutions. I specialize in front-end development and have a keen eye for design and game development as well as advertising.</p>
+            </div>
+            <div class="about-image">
+                <img src="anonymous.jfif" alt="Your Name">
+            </div>
+        </div>
+    </section>
+    <section id="academic-skills">
+        <h2>Academic Path & Skills</h2>
+        <div class="academic-skills-container">
+            <div class="academic">
+                <h3>Academic Path</h3>
+                <p>Born and raised in Morocco, I pursued my academic journey with a passion for technology and innovation. Graduating from a prestigious university in Morocco with a degree in Computer Science, I embarked on a journey to hone my skills in software development. My academic years provided me with a strong foundation in algorithms, data structures, and programming languages. I actively participated in various extracurricular activities and projects, fostering my interest in software engineering. Through rigorous coursework and hands-on projects, I developed a keen understanding of software development methodologies and techniques. My academic background instilled in me a deep appreciation for problem-solving and critical thinking, essential qualities for navigating the dynamic landscape of software development.</p>
+            </div>
+            <div class="skills">
+                <h3>Skills</h3>
+                <h1>Programming Language Skills</h1>
+  <ul>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/javascript.png" alt="JavaScript Icon">
+      JavaScript
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/python.png" alt="Python Icon">
+      Python
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/java-coffee-cup-logo.png" alt="Java Icon">
+      Java
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/c-sharp-logo.png" alt="C# Icon">
+      C#
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/c-plus-plus-logo.png" alt="C++ Icon">
+      C++
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/ruby-programming-language.png" alt="Ruby Icon">
+      Ruby
+    </li>
+    <li>
+      <img src="https://img.icons8.com/officel/24/000000/php-logo.png" alt="PHP Icon">
+      PHP
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/swift.png" alt="Swift Icon">
+      Swift
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/kotlin.png" alt="Kotlin Icon">
+      Kotlin
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/typescript.png" alt="TypeScript Icon">
+      TypeScript
+    </li>
+    <li>
+      <img src="https://img.icons8.com/color/24/000000/golang.png" alt="Go Icon">
+      Go
+    </li>
+  </ul>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio">
+        <h2>My Work</h2>
+        <div class="gallery">
+            <div class="gallery-item">Project 1</div>
+            <div class="gallery-item">Project 2</div>
+            <div class="gallery-item">Project 3</div>
+            <div class="gallery-item">Project 4</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script >
+        function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+document.getElementById('learn-more-btn').addEventListener('click', function() {
+    scrollToSection('about');
+});
+
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        scrollToSection(this.getAttribute('href').substring(1));
+    });
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Message sent successfully!');
+});
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+    </script>
+</body>
+</html> 
